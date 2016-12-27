@@ -1,4 +1,6 @@
 import React from 'react';
+import './Gallery.css';
+import Image from '../Image/Image.js'
 
 class Gallery extends React.Component {
 
@@ -6,7 +8,7 @@ class Gallery extends React.Component {
 		super();
 		this.state = {
 			images: [
-				{url:'https://c6.staticflickr.com/1/261/31759510341_dd20e9859e_n.jpg', id: 1},
+				{url: 'https://c6.staticflickr.com/1/261/31759510341_dd20e9859e_n.jpg', id: 1},
 				{url: 'https://c1.staticflickr.com/1/546/31489432360_be65f69fce_n.jpg', id: 2},
 				{url: 'https://c1.staticflickr.com/1/764/31846051296_d3f8038f35_n.jpg', id: 3},
 				{url: 'https://c4.staticflickr.com/1/703/31888213035_6114b01797_n.jpg', id: 4},
@@ -21,16 +23,17 @@ class Gallery extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="container">
 				{this._handleImage()}
 			</div>
 		);
 	}
 
-
 	_handleImage() {
 		return this.state.images.map((image)=> {
-			return (<img src={image.url} key={image.id}/>)
+			return (
+				<Image image={image} key={image.id}/>
+			)
 		});
 	}
 }

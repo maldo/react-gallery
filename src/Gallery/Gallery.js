@@ -16,14 +16,15 @@ class Gallery extends React.Component {
 				{url: 'https://c1.staticflickr.com/1/324/31056295944_2478dd1f83_n.jpg', id: 6},
 				{url: 'https://c6.staticflickr.com/1/501/31909693885_83377e6856_n.jpg', id: 7},
 				{url: 'https://c6.staticflickr.com/1/381/31084753413_8b872b2db7_n.jpg', id: 8},
-				{url: 'https://c5.staticflickr.com/1/782/31746988892_d53420b14a_n.jpg', id: 9}
+				{url: 'https://c5.staticflickr.com/1/782/31746988892_d53420b14a_n.jpg', id: 9},
+				{url: 'https://c6.staticflickr.com/1/261/31759510341_dd20e9859e_n.jpg', id: 10}
 			]
 		};
 	}
 
 	render() {
 		return (
-			<div className="container">
+			<div className="gallery">
 				{this._handleImage()}
 			</div>
 		);

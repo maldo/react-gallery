@@ -12,15 +12,16 @@ class Image extends React.Component {
 
 	render() {
 		return(
-			<div className="containerImage">
+			<div className="containerImage" onClick={() => this._showImage(this.props.image)}>
 				<img
 				src={this.props.image.url}
 				className="img"
-				onClick={() => this._showImage(this.props.image)}
-				onMouseOver={this._mouseOver.bind(this)}
-				onMouseOut={this._mouseOut.bind(this)}
+				/*onClick={() => this._showImage(this.props.image)}*/
+				/*onMouseOver={this._mouseOver.bind(this)}
+				onMouseOut={this._mouseOut.bind(this)}*/
+				data-content="5"
 				/>
-				{this._handleImageOver(this.props.image)}
+				{/*this._handleImageOver(this.props.image)*/}
 			</div>
 		);
 	}
@@ -28,7 +29,7 @@ class Image extends React.Component {
 	_handleImageOver(image) {
 		if (this.state.isHover) {
 			return (
-				<div className="over">
+				<div>
 					{image.id}
 				</div>
 			);

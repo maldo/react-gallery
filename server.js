@@ -12,7 +12,7 @@ const flickrOptions = {
 	per_page: '50'
 };
 
-app.get('/photos', function (req, res) {
+app.get('/api/photos', function (req, res) {
 	const url = generateUrl(flickrOptions);
 	console.log('Request photos to flickr');
 	rp(url, {

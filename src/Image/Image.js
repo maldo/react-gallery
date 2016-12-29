@@ -21,7 +21,6 @@ class Image extends React.Component {
 				onMouseOut={this._mouseOut.bind(this)}*/
 				data-content="5"
 				/>
-				{/*this._handleImageOver(this.props.image)*/}
 			</div>
 		);
 	}
@@ -36,16 +35,16 @@ class Image extends React.Component {
 		} 
 	}
 
-	_mouseOver(event) {
+	/*_mouseOver(event) {
 		this.setState({isHover: true});
 	}
 
 	_mouseOut(event) {
 		this.setState({isHover: false});
-	}
+	}*/
 
 	_showImage(image) {
-		alert('Aqui la imagen en grande ' + image.id);
+		alert('Aqui la imagen en grande ' + image.title);
 	}
 }
 

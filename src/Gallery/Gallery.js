@@ -22,6 +22,14 @@ class Gallery extends React.Component {
 		};
 	}
 
+	componentDidMount() {
+		fetch('/photos', {credentials: 'include'})
+			.then(function(response) {
+				console.log(response);
+				//return response.text()
+			})
+	}
+
 	render() {
 		return (
 			<div className="gallery">

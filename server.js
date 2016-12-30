@@ -1,7 +1,9 @@
 const express = require('express');
 const rp = require('request-promise');
+const helmet = require('helmet');
 
 const app = express();
+app.use(helmet())
 
 const flickrOptions = {
 	api_key: '6fd98d981b8efae4fe890c04ab5f2574',

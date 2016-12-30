@@ -1,23 +1,26 @@
 .containerImage {
   cursor: pointer;
   position: relative;
-  padding: 10px 10px 10px 10px;
   flex: 1;
+  min-width: 320px;
+  max-width: 450px;
+  height: 250px;
+  overflow: hidden;
+  padding: 1em 0.5em;
 }
 .containerImage img {
   width: 100%;
-  min-width: 320px;
-  max-width: 450px;
 }
 .containerImage:hover:after {
-  content: attr(data-content);
+  content: attr(data-title);
   width: 100%;
-  height: 100%;
-  background: lightskyblue;
+  background: rgba(0,0,0,.5);
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  opacity: .5;
-  font-size: 38px;
+  font-size: 24px;
   text-align: center;
+  color: white;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
 }

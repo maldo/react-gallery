@@ -12,7 +12,7 @@ class Gallery extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch('/api/photos', {credentials: 'include'})
+		fetch('/api/photos')
 			.then((response) => {
 				return response.json();
 			})

@@ -12,14 +12,12 @@ class Image extends React.Component {
 
 	render() {
 		return(
-			<div className="containerImage" onClick={() => this._showImage(this.props.image)}>
+			<div className="containerImage"
+			onClick={() => this._showImage(this.props.image)}
+			data-title={this.props.image.title}>
 				<img
 				src={this.props.image.url}
 				className="img"
-				/*onClick={() => this._showImage(this.props.image)}*/
-				/*onMouseOver={this._mouseOver.bind(this)}
-				onMouseOut={this._mouseOut.bind(this)}*/
-				data-content="5"
 				/>
 			</div>
 		);
@@ -34,14 +32,6 @@ class Image extends React.Component {
 			);
 		} 
 	}
-
-	/*_mouseOver(event) {
-		this.setState({isHover: true});
-	}
-
-	_mouseOut(event) {
-		this.setState({isHover: false});
-	}*/
 
 	_showImage(image) {
 		alert('Aqui la imagen en grande ' + image.title);

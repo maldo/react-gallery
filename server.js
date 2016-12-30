@@ -9,7 +9,7 @@ const flickrOptions = {
 	format: 'json',
 	method: 'flickr.photos.getRecent',
 	nojsoncallback: '1',
-	per_page: '50'
+	per_page: '25'
 };
 
 app.get('/api/photos', function (req, res) {

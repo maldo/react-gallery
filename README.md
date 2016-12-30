@@ -19,7 +19,7 @@ Things that are missing from the react galley.
 
 ## Backend
 A Node.js server with expressjs framework.
-The server has an endpoint for delivery images to the frontend. The frontend is completely agnostic from which services is the backend getting the photos.
+The server has an endpoint for delivering images to the frontend. The frontend is completely agnostic from which services the backend is getting the photos.
 We can easly add another provider e.g. 500px
 
 Still some work to do:

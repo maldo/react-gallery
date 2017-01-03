@@ -18,7 +18,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "preserve": "npm run build",
+    "serve": "node server.js"
   },
   "proxy": "http://localhost:8000"
 }

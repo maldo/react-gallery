@@ -1,6 +1,7 @@
 const express = require('express');
 const rp = require('request-promise');
 const helmet = require('helmet');
+const path = require('path');
 
 const app = express();
 app.use(helmet())
@@ -33,6 +34,18 @@ app.get('/api/photos', function (req, res) {
 		console.log('Sending photos through our API');
 		res.send(toSend);
 	});
+});
+
+/**
+ * Virtual route to serve static files
+ */
+app.use('/static', express.static('build/static'));
+
+/**
+ * Firts request to serve the index.html 
+ */
+app.get('/', function(req, res) {
+  res.sendFile(path.resolve(__dirname, 'build/index.html'));
 });
 
 app.listen(8000, () => {

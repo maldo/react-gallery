@@ -1,6 +1,7 @@
 import React from 'react';
 import './Gallery.css';
-import Image from '../Image/Image.js'
+import Image from '../Image/Image.js';
+import Infinte from 'react-infinite';
 
 class Gallery extends React.Component {
 
@@ -25,10 +26,32 @@ class Gallery extends React.Component {
 
 	render() {
 		return (
-			<div className="gallery">
-				{this._handleImage()}
-			</div>
+			<Infinte
+				elementHeight={360}
+				useWindowAsScrollContainer
+				infiniteLoadBeginEdgeOffset={200}
+				onInfiniteLoad={this._handleInfiniteLoad.bind(this)}>
+				<div className="gallery">
+					{this._handleImage()}
+				</div>
+			</Infinte>
 		);
+	}
+
+	_handleInfiniteLoad() {
+		this.setState({
+            isInfiniteLoading: true
+        });
+		fetch('/api/photos')
+			.then((response) => {
+				return response.json();
+			})
+			.then((body) => {
+				this.setState({
+					isInfiniteLoading: false,
+					images: this.state.images.concat(body)
+				});
+			});
 	}
 
 	_handleImage() {

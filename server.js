@@ -33,6 +33,10 @@ app.get('/api/photos', function (req, res) {
 		});
 		console.log('Sending photos through our API');
 		res.send(toSend);
+	})
+	.catch((e) => {
+		console.log(e);
+		res.sendStatus(500);
 	});
 });
 

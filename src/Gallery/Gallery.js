@@ -7,20 +7,18 @@ class Gallery extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			images: []
+			images: [],
+			loading: false
 		};
 	}
 
 	componentDidMount() {
-		fetch('/api/photos')
-			.then((response) => {
-				return response.json();
-			})
-			.then((body) => {
-				this.setState({
-					images: body
-				});
-			});
+		window.addEventListener("scroll", this._handleScroll.bind(this));
+		this._getPhotos();
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("scroll", this._handleScroll.bind(this));
 	}
 
 	render() {
@@ -37,6 +35,33 @@ class Gallery extends React.Component {
 				<Image image={image} key={i}/>
 			)
 		});
+	}
+
+	_getPhotos() {
+		fetch('/api/photos')
+			.then((response) => {
+				return response.json();
+			})
+			.then((body) => {
+				this.setState({
+					images: this.state.images.concat(body),
+					loadingFlag: false
+				});
+			})
+			.catch(()=> {
+				setTimeout(()=>{
+					this.setState({loadingFlag: false});
+				}, 1000);
+			});
+	}
+
+	_handleScroll() {
+		if ((window.innerHeight + window.scrollY) + (Math.round((1/4) * document.body.offsetHeight)) >= document.body.offsetHeight) {
+			if(!this.state.loadingFlag){
+				this.setState({loadingFlag:true});
+				this._getPhotos();
+			}
+		}
 	}
 }
 

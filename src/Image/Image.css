@@ -24,3 +24,7 @@
   padding: 0.5em 1em;
   box-sizing: border-box;
 }
+
+.subtitle {
+  color: grey;
+}

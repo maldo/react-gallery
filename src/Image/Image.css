@@ -1,0 +1,30 @@
+.containerImage {
+  cursor: pointer;
+  position: relative;
+  flex: 1;
+  min-width: 320px;
+  max-width: 450px;
+  height: 250px;
+  overflow: hidden;
+  padding: 1em 0.5em;
+}
+.containerImage img {
+  width: 100%;
+}
+.containerImage:hover:after {
+  content: attr(data-title);
+  width: 100%;
+  background: rgba(0,0,0,.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 24px;
+  text-align: center;
+  color: white;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+}
+
+.subtitle {
+  color: grey;
+}

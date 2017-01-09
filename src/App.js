@@ -6,8 +6,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1> Sample Gallery in react </h1>
-        <Gallery />
+        <div className="container"> 
+          <h1>Sample Gallery in react</h1>
+        </div>
+        <div className="container">
+          <Gallery />
+        </div>
       </div>
     );
   }

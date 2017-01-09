@@ -6,13 +6,22 @@
     "react-scripts": "0.8.4"
   },
   "dependencies": {
+    "express": "^4.14.0",
+    "helmet": "^3.2.0",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "react-overlays": "^0.6.10",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "whatwg-fetch": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "preserve": "npm run build",
+    "serve": "node server.js"
+  },
+  "proxy": "http://localhost:8000"
 }

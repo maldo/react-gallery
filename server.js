@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 app.use(helmet())
 
-let flickrOptions = {
+const flickrOptions = {
 	api_key: '6fd98d981b8efae4fe890c04ab5f2574',
 	secret: '7512dba463e56332',
 	format: 'json',

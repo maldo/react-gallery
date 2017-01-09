@@ -12,7 +12,7 @@ The idea of the development of the Gallery is going from a simple solution to a 
 Things that are missing from the react galley.
 - [x] Hover effect
 - [x] Infinite scrolling
-- [ ] Modal
+- [x] Modal
 - [ ] Redux
 - [ ] ¿Routes? (if needed)
 - [ ] Testing
@@ -38,3 +38,10 @@ Once everything is installed, we can run the gallery by executing:
 npm run serve
 ```
 The server will listen to post 8000 [http://localhost:8000/](http://localhost:8000/)
+
+
+## Considerations
+- The first is react galley does not support Internet Explorer 9, css use flex and it is only support on IE10+ also with fetch only support on IE10+
+- Still some testing to do, everything have been tested manually
+- The app is so simple that I didn't see how to use routes
+- Still some work to do with redux and using Actions and Stores
